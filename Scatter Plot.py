@@ -1,3 +1,8 @@
+import yfinance as yf
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
 def risk_return_plot(tickers, start_date=None, end_date=None, data=True, log=False):
     if data:
         data_df = pd.DataFrame()

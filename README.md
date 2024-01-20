@@ -1,0 +1,1 @@
+Welcome to the Financial Visualisation Toolkit – a powerful set of tools and resources designed to facilitate comprehensive data visualisation in the field of finance. This repository aims to provide a collection of scripts, notebooks, and examples for creating insightful visualisations to aid financial analysis, decision-making, and reporting.

@@ -4,3 +4,9 @@ Welcome to the Financial Visualisation Toolkit – a powerful set of tools and r
 
 ![](https://github.com/vladislavpyatnitskiy/finvizpy/blob/main/Plots/Scatter%20Plot.png?raw=true)
 #### Fig. 1. Scatter Plot of Tech Stocks by Risk and Return
+
+![](https://github.com/vladislavpyatnitskiy/finvizpy/blob/main/Plots/Boxplot%20in%20Python.png?raw=true)
+#### Fig. 2. Box Plot
+
+![](https://github.com/vladislavpyatnitskiy/finvizpy/blob/main/Plots/Pie%20Plot%20Python.png?raw=true)
+#### Fig. 3. Pie Plot

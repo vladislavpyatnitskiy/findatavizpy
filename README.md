@@ -1,5 +1,7 @@
 # Financial Data Visualisation via Python
 
+[![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/)
+
 Welcome to the Financial Visualisation Toolkit – a powerful set of tools and resources designed to facilitate comprehensive data visualisation in the field of finance. This repository aims to provide a collection of scripts, notebooks, and examples for creating insightful visualisations to aid financial analysis, decision-making, and reporting.
 
 ![](https://github.com/vladislavpyatnitskiy/finvizpy/blob/main/Plots/Scatter%20Plot.png?raw=true)
@@ -10,3 +12,6 @@ Welcome to the Financial Visualisation Toolkit – a powerful set of tools and r
 
 ![](https://github.com/vladislavpyatnitskiy/finvizpy/blob/main/Plots/Pie%20Plot%20Python.png?raw=true)
 #### Fig. 3. Pie Plot
+
+![](https://github.com/vladislavpyatnitskiy/finvizpy/blob/main/Plots/Line%20Plot.png?raw=true)
+#### Fig. 4. Line Plot

@@ -1,42 +1,42 @@
 import yfinance as yf
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
-# Function to create barplot
-def bar_plt(tickers, start_date=None, end_date=None, col="blue", main=None,
-            data=False):
-    data_list = []
+def bar_plt(y, s=None, e=None, col="blue", main=None): # Bar plot
+  
+    p = pd.DataFrame()  # Create an empty DataFrame
 
-    if data:
-        for ticker in tickers:
-            if start_date is None and end_date is None:
-                stock_data = yf.download(ticker)
-            elif start_date is None:
-                stock_data = yf.download(ticker, end=end_date)
-            elif end_date is None:
-                stock_data = yf.download(ticker, start=start_date)
-            else:
-                stock_data = yf.download(ticker,start=start_date,end=end_date)
+    # Loop for data extraction & Set up statements for start and end dates
+    for ticker in y:
+        if s is None and e is None:
+            # When neither start date nor end date is defined
+            data = yf.download(ticker)
+        elif e is None:
+            data = yf.download(ticker, start=s) # Only start date is defined
+        elif s is None:
+            data = yf.download(ticker, end=e)  # When only end date is defined
+        else:
+            # When both start date and end date are defined
+            data = yf.download(ticker, start=s, end=e)
 
-            data_list.append(stock_data['Adj Close'].pct_change().dropna())
+        # Extract the Adjusted Close prices and add to the DataFrame
+        if not data.empty:
+            p[ticker] = data['Adj Close']
 
-        tickers = [ticker.upper() for ticker in tickers]
-        x = np.sort([np.exp(np.sum(np.diff(np.log(col))[-1])) - 1 for col in data_list])[::-1]
-    else:
-        x = np.sort([0] * len(tickers))[::-1]
+    p = p.dropna() # Drop rows with NA values
 
-    # Barplot
-    bar_plt_script = plt.barh(range(len(x)), x, color=col)
-    plt.yticks(range(len(x)), tickers)
-    plt.title(main)
-    plt.ylabel("Data Source: Yahoo Finance")
+    x = ((np.exp(np.sum(np.log(p / p.shift(1)).dropna())) - 1) * 100)
+        
+    x = pd.DataFrame(x)
+        
+    x.columns = ['Return']
+  
+    x = x.sort_values(by = 'Return')
     
-    # Add grey dotted lines
-    for idx, bar in enumerate(bar_plt_script):
-        plt.axhline(y=bar.get_width(), color="grey", linestyle="--")
-
+    x.plot(kind='bar')
+    plt.title(main)
     plt.show()
-
-# Test
-bar_plt(["AIG", "MET", "HIG", "UNM", "OMF"], start_date="2023-10-01",
-        main="Asset Performance", data=True)
+    
+bar_plt(["AIG", "MET", "HIG", "UNM", "OMF"], s="2023-10-01",
+        main='Performance of Insurance Companies (%)') # Test

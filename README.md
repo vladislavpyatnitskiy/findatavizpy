@@ -15,3 +15,9 @@ Welcome to the Financial Visualisation Toolkit – a powerful set of tools and r
 
 ![](https://github.com/vladislavpyatnitskiy/finvizpy/blob/main/Plots/Line%20Plot.png?raw=true)
 #### Fig. 4. Line Plot
+
+![](https://github.com/vladislavpyatnitskiy/finvizpy/blob/main/Plots/Cumulative%20Returns.png?raw=true)
+#### Fig. 5. Line Plot of Cumulative Returns
+
+![](https://github.com/vladislavpyatnitskiy/finvizpy/blob/main/Plots/Volatility%20Plot.png?raw=true)
+#### Fig. 6. Line Plot of Stock Volatility

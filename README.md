@@ -21,3 +21,6 @@ Welcome to the Financial Visualisation Toolkit – a powerful set of tools and r
 
 ![](https://github.com/vladislavpyatnitskiy/finvizpy/blob/main/Plots/Volatility%20Plot.png?raw=true)
 #### Fig. 6. Line Plot of Stock Volatility
+
+![](https://github.com/vladislavpyatnitskiy/finvizpy/blob/main/Plots/Barplot.png?raw=true)
+#### Fig. 7. Bar Plot of Stocks' Performance

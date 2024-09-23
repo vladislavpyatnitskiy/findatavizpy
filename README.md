@@ -7,23 +7,32 @@ Welcome to the Financial Visualisation Toolkit – a powerful set of tools and r
 ![](https://github.com/vladislavpyatnitskiy/finvizpy/blob/main/Plots/Scatter%20Plot.png?raw=true)
 #### Fig. 1. Scatter Plot of Tech Stocks by Risk and Return
 
+![](https://github.com/vladislavpyatnitskiy/findatavizpy/blob/main/Plots/Scatter%20Plot%20of%20Beta.png?raw=true)
+#### Fig. 2. Scatter Plot of Relationship Between Market and Stock
+
 ![](https://github.com/vladislavpyatnitskiy/finvizpy/blob/main/Plots/Boxplot%20in%20Python.png?raw=true)
-#### Fig. 2. Box Plot
+#### Fig. 3. Box Plot of Stock Returns
 
 ![](https://github.com/vladislavpyatnitskiy/finvizpy/blob/main/Plots/Pie%20Plot%20Python.png?raw=true)
-#### Fig. 3. Pie Plot
+#### Fig. 4. Pie Plot
 
 ![](https://github.com/vladislavpyatnitskiy/finvizpy/blob/main/Plots/Line%20Plot.png?raw=true)
-#### Fig. 4. Line Plot
+#### Fig. 5. Line Plot
 
 ![](https://github.com/vladislavpyatnitskiy/finvizpy/blob/main/Plots/Cumulative%20Returns.png?raw=true)
-#### Fig. 5. Line Plot of Cumulative Returns
+#### Fig. 6. Line Plot of Cumulative Returns
 
 ![](https://github.com/vladislavpyatnitskiy/finvizpy/blob/main/Plots/Volatility%20Plot.png?raw=true)
-#### Fig. 6. Line Plot of Stock Volatility
+#### Fig. 7. Line Plot of Stock Volatility
 
 ![](https://github.com/vladislavpyatnitskiy/finvizpy/blob/main/Plots/Barplot.png?raw=true)
-#### Fig. 7. Bar Plot of Stocks' Performance
+#### Fig. 8. Bar Plot of Stocks' Performance
 
 ![](https://github.com/vladislavpyatnitskiy/finvizpy/blob/main/Plots/Histogram.png?raw=true)
-#### Fig. 8. Histogram of Stock Returns
+#### Fig. 9. Histogram of Stock Returns
+
+![](https://github.com/vladislavpyatnitskiy/findatavizpy/blob/main/Plots/QQ%20Plot.png?raw=true)
+#### Fig. 10. QQ Plot of Stock Returns
+
+![](https://github.com/vladislavpyatnitskiy/findatavizpy/blob/main/Plots/Heatmap.png?raw=true)
+#### Fig. 11. Heatmap of Stock Returns' Correlations

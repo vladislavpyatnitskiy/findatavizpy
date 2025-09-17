@@ -1,37 +1,40 @@
 import yfinance as yf
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 
-# Function to create boxplot
-def box_plt(tickers, start_date=None, end_date=None, main=None,
-            log_scale=False):
-    data = []
-    
-    for ticker in tickers:
-        if start_date is None and end_date is None:
-            stock_data = yf.download(ticker)
-        elif start_date is None:
-            stock_data = yf.download(ticker, end=end_date)
-        elif end_date is None:
-            stock_data = yf.download(ticker, start=start_date)
+def box_plt(y, s=None, e=None, main=None):
+    p = pd.DataFrame()  # Create an empty DataFrame
+
+    # Loop for data extraction & Set up statements for start and end dates
+    for ticker in y:
+        if s is None and e is None:
+            # When neither start date nor end date is defined
+            data = yf.download(ticker, start="2007-01-01")
+        elif e is None:
+            data = yf.download(ticker, start=s) # Only start date is defined
+        elif s is None:
+            data = yf.download(ticker, end=e)  # When only end date is defined
         else:
-            stock_data = yf.download(ticker, start=start_date, end=end_date)
-        
-        data.append(stock_data['Adj Close'])
-    
-    data = [d.dropna() for d in data if not d.empty] # Get rid of NA
-    
-    tickers = [ticker.upper() for ticker in tickers]
-    
-    if log_scale or start_date is not None or end_date is not None:
-        data = [d.pct_change().dropna() for d in data]
-    
-    plt.boxplot(data, labels=tickers, vert=True, patch_artist=True, notch=True)
+            # When both start date and end date are defined
+            data = yf.download(ticker, start=s, end=e)
+
+        # Extract the Adjusted Close prices and add to the DataFrame
+        if not data.empty:
+            p[ticker] = data[('Close', f'{ticker}')]
+            
+    p = p.dropna() # Drop rows with NA values
+
+    x = np.log(p / p.shift(1)).dropna()
+     
+    x.plot(kind="box")    
     plt.title(main)
     plt.xlabel("Data Source: Yahoo Finance")
     plt.ylabel("Returns")
+    plt.grid(True, linestyle=":", color="grey")
     plt.axhline(y=0, color='grey', linestyle='--')
     plt.show()
 
 # Test
-box_plt(["AAPL", "MSFT", "META", "GOOGL", "AMZN"], start_date = "2023-01-01",
+box_plt(["AAPL", "MSFT", "META", "GOOGL", "AMZN"], s = "2023-01-01",
         main = "Boxplot of IT companies")

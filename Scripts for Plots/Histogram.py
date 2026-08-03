@@ -2,8 +2,9 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import yfinance as yf
+import seaborn as sns
 
-def hist_plt(y, s=None, e=None):
+def hist_plt(y, s=None, e=None,bins=50, log=True):
   
   p = pd.DataFrame()  # Create an empty DataFrame
 
@@ -27,7 +28,7 @@ def hist_plt(y, s=None, e=None):
   
   for column in x.columns:
         plt.figure()  # Create a new figure for each plot
-        plt.hist(x[column])
+        plt.hist(x[column], bins=bins, edgecolor='black', alpha = 0.7)
         plt.title(column)
         plt.xlabel('Returns')
         plt.ylabel('Frequency')
